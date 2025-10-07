@@ -30,18 +30,32 @@ export default function ListView() {
   }, [setItemsInStore, setSource]);
 
   useEffect(() => {
-    const h = setTimeout(() => {
+    const handler = setTimeout(() => {
       const q = query.trim();
-      if (q.length === 0) return;
+
+      if (q.length === 0) {
+        bootstrapMeals()
+          .then((data) => {
+            setItems(data);
+            setItemsInStore(data);
+            setSource({ view: 'list', query: '' });
+            setError('');
+          })
+          .catch(() => setError('Failed to reload meals.'));
+        return;
+      }
+
       searchMealsByName(q)
         .then((data) => {
           setItems(data || []);
           setItemsInStore(data || []);
           setSource({ view: 'list', query: q });
+          setError('');
         })
         .catch(() => setError('Search failed; showing cached or mock data.'));
     }, 250);
-    return () => clearTimeout(h);
+
+    return () => clearTimeout(handler);
   }, [query, setItemsInStore, setSource]);
 
   const filteredSorted = useMemo(() => {
