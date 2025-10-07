@@ -27,11 +27,6 @@ const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
         </nav>
       </header>
       <main className={styles.main}>{children}</main>
-      <footer className={styles.footer}>
-        <span>
-          Data: TheMealDB.com • MP2 • React + TypeScript + Axios + Router
-        </span>
-      </footer>
     </div>
   );
 };
