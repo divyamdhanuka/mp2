@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState, useCallback } from 'react';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { fetchMealById } from '../../api/meals';
 import type { MealDetail } from '../../types';
@@ -51,12 +51,13 @@ export default function DetailView() {
   const prevId = hasPrev ? items[currentIndex - 1].idMeal : undefined;
   const nextId = hasNext ? items[currentIndex + 1].idMeal : undefined;
 
-  const goPrev = () => {
+  const goPrev = useCallback(() => {
     if (prevId) navigate(`/meal/${prevId}?idx=${currentIndex - 1}`);
-  };
-  const goNext = () => {
+  }, [prevId, navigate, currentIndex]);
+
+  const goNext = useCallback(() => {
     if (nextId) navigate(`/meal/${nextId}?idx=${currentIndex + 1}`);
-  };
+  }, [nextId, navigate, currentIndex]);
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
@@ -65,7 +66,7 @@ export default function DetailView() {
     }
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [hasPrev, hasNext, prevId, nextId]);
+  }, [hasPrev, hasNext, goPrev, goNext]);
 
   // extract ingredients
   const ingredients = useMemo(() => {
