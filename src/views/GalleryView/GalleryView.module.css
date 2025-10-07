@@ -1,0 +1,41 @@
+.title {
+  margin: 0 0 12px;
+}
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.tag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border: 1px solid #334155;
+  border-radius: 999px;
+  background: #0b132b;
+  cursor: pointer;
+  user-select: none;
+}
+.tag input {
+  appearance: none;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+.tag input:checked + span {
+  background: #1d4ed8;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 999px;
+}
+.error {
+  margin: 10px 0;
+  color: #fecaca;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--gap);
+}

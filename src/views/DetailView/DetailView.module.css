@@ -1,0 +1,52 @@
+.error {
+  margin: 10px 0;
+  color: #fecaca;
+}
+.wrap {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 22px;
+  align-items: start;
+}
+.media img {
+  width: 100%;
+  border-radius: var(--radius);
+  border: 1px solid #334155;
+  box-shadow: 0 16px 32px rgba(2, 6, 23, 0.45);
+}
+.content h1 {
+  margin: 0 0 6px;
+}
+.sub {
+  opacity: 0.8;
+  margin: 0 0 12px;
+}
+.controls {
+  display: flex;
+  gap: 10px;
+  margin: 12px 0 20px;
+}
+.controls button {
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid #334155;
+  background: #0b132b;
+  color: #e2e8f0;
+  cursor: pointer;
+}
+.controls button:hover:not(:disabled) {
+  border-color: #475569;
+  box-shadow: 0 6px 16px rgba(2, 6, 23, 0.35);
+}
+.controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.instructions {
+  white-space: pre-wrap;
+  line-height: 1.5;
+}
+.list {
+  margin: 0;
+  padding-left: 18px;
+}

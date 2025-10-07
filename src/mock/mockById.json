@@ -1,0 +1,14 @@
+{
+  "meals": [
+    {
+      "idMeal": "52772",
+      "strMeal": "Teriyaki Chicken Casserole",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/wvpsxx1468256321.jpg",
+      "strCategory": "Chicken",
+      "strArea": "Japanese",
+      "strInstructions": "Preheat oven to 350°F...",
+      "strIngredient1": "Chicken",
+      "strMeasure1": "500g"
+    }
+  ]
+}

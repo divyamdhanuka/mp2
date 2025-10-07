@@ -1,0 +1,37 @@
+.shell {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+}
+.logo {
+  width: 28px;
+  height: 28px;
+}
+.nav {
+  display: flex;
+  gap: 14px;
+}
+.active {
+  font-weight: 700;
+  text-decoration: underline;
+}
+.main {
+  min-height: 70vh;
+}
+.footer {
+  margin-top: 32px;
+  opacity: 0.7;
+  font-size: 14px;
+}
